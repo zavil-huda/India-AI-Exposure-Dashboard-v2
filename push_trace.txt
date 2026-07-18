@@ -1,0 +1,10 @@
+03:06:03.816490 git.c:502               trace: built-in: git push -u origin main
+03:06:03.820506 run-command.c:673       trace: run_command: GIT_DIR=.git git remote-https origin https://github.com/zavil-huda/India-AI-Exposure-Dashboard-v2.git
+03:06:03.820544 run-command.c:765       trace: start_command: /opt/homebrew/opt/git/libexec/git-core/git remote-https origin https://github.com/zavil-huda/India-AI-Exposure-Dashboard-v2.git
+03:06:03.828338 git.c:811               trace: exec: git-remote-https origin https://github.com/zavil-huda/India-AI-Exposure-Dashboard-v2.git
+03:06:03.828782 run-command.c:673       trace: run_command: git-remote-https origin https://github.com/zavil-huda/India-AI-Exposure-Dashboard-v2.git
+03:06:03.828801 run-command.c:765       trace: start_command: /opt/homebrew/opt/git/libexec/git-core/git-remote-https origin https://github.com/zavil-huda/India-AI-Exposure-Dashboard-v2.git
+fatal: Unsupported SSL backend 'SecureTransport'. Supported SSL backends:
+	secure-transport
+	openssl
+fatal: remote helper 'https' aborted session
