@@ -1,61 +1,113 @@
 # 🇮🇳 India AI Exposure Dashboard
 
-An interactive dashboard that explores how Generative AI may impact different occupations across India's workforce through transparent exposure scoring and interactive data visualization.
+> **An Interactive Research Dashboard for Exploring Occupational AI Exposure Across India's Workforce**
+
+A modern, research-driven dashboard that visualizes how Generative AI may influence different occupations across India's workforce using transparent exposure scoring, interactive analytics, and intuitive data visualization.
 
 ---
 
-## Overview
+## 📊 Dashboard Preview
 
-Artificial Intelligence is changing the way people work, but its impact is not the same across every profession.
-
-This project visualizes the potential AI exposure of different occupations in India using an interactive dashboard inspired by modern workforce analytics. Instead of predicting job replacement, the dashboard focuses on understanding where AI is most likely to assist, augment, or automate digital work.
-
-The visualization combines publicly available workforce statistics, occupation classifications, and a transparent exposure scoring methodology to present an intuitive overview of AI's potential impact across sectors.
-
----
-
-## Key Highlights
-
-- Interactive AI Exposure Treemap
-- Occupation-wise Workforce Analysis
-- Exposure vs Workforce Distribution
-- Employment Statistics Overview
-- Responsive Dashboard
-- Dark & Light Theme Support
-- Interactive Plotly Visualizations
-- Transparent AI Exposure Scoring
-
----
-
-## Live Demo
-
-GitHub Pages deployment will be available after the first public release.
-
----
-
-## Technology Stack
-
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-- Plotly.js
-- Google Fonts
-
----
-
-## Project Structure
+> **Add your final dashboard screenshot here after deployment.**
 
 ```text
-India-AI-Exposure-Dashboard/
-│
-├── index.html
-├── README.md
-└── LICENSE
+assets/screenshots/dashboard-preview.png
 ```
 
 ---
 
-## Data Sources
+## ✨ Why This Project?
+
+Artificial Intelligence is transforming the nature of work across industries, but its impact is not uniform across occupations.
+
+The **India AI Exposure Dashboard** was created to provide a transparent and interactive way to explore how Generative AI may influence different occupational groups across India's workforce.
+
+Instead of predicting job replacement, the dashboard focuses on understanding where AI is most likely to assist, augment, or automate digital work through a research-oriented visualization approach.
+
+---
+
+# 🚀 Key Features
+
+### 📈 Interactive Analytics
+
+- Interactive AI Exposure Treemap
+- Occupation-wise Workforce Analysis
+- AI Exposure vs Workforce Distribution
+- Employment Statistics Overview
+- Interactive Data Table
+
+### 🎨 User Experience
+
+- Responsive Layout
+- Dark & Light Theme
+- Smooth Scrolling
+- Professional Dashboard Design
+- Accessible Interface
+
+### 📊 Data Visualization
+
+- Plotly.js Interactive Charts
+- KPI Cards
+- Treemap Visualization
+- Scatter Plot Analysis
+- Workforce Ranking Table
+
+### 🔬 Research
+
+- Transparent AI Exposure Methodology
+- Occupation-Based Analysis
+- Publicly Available Government References
+- Educational & Research-Oriented Insights
+
+---
+
+# 🧭 Dashboard Walkthrough
+
+The dashboard is organized into multiple research-driven sections:
+
+1. Overview
+2. Key Research Highlights
+3. Research Question 1 — AI Exposure Treemap
+4. Research Question 2 — Highest AI Exposure Occupations
+5. Research Question 3 — AI Exposure vs Workforce Scale
+6. Research Question 4 — Largest AI-Exposed Workforce Groups
+7. Data Sources & Methodology
+
+Each section is designed to answer a specific research question while maintaining a consistent visual narrative.
+
+---
+
+# 🛠 Technology Stack
+
+| Category | Technology |
+|-----------|------------|
+| Frontend | HTML5 |
+| Styling | CSS3 |
+| Programming | Vanilla JavaScript |
+| Visualization | Plotly.js |
+| Typography | Google Fonts |
+
+---
+
+# 📂 Project Structure
+
+```text
+India-AI-Exposure-Dashboard-v2/
+│
+├── assets/
+│   ├── icons/
+│   │   └── favicon.svg
+│   └── screenshots/
+│
+├── index.html
+├── README.md
+├── LICENSE
+└── .gitignore
+```
+
+---
+
+# 📚 Data Sources
 
 This dashboard references publicly available information from:
 
@@ -67,57 +119,87 @@ This dashboard references publicly available information from:
 
 ---
 
-## Methodology
+# 🔍 Methodology
 
-The dashboard estimates AI exposure using occupation-based characteristics such as the nature of work, digital dependency, routine information processing, and current AI capabilities.
+The dashboard estimates AI exposure using occupation-based characteristics such as:
 
-The exposure scores presented in this project are intended for visualization and educational analysis. They are transparent estimates designed to encourage discussion and should not be interpreted as official government rankings.
+- Digital dependency
+- Routine information processing
+- Nature of work
+- Current Generative AI capabilities
+
+The exposure scores presented in this project are transparent analytical estimates intended for educational and research purposes.
+
+They should not be interpreted as official government rankings or predictions of job replacement.
 
 ---
 
-## Running the Project
+# ▶️ Running the Project
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/zavil-huda/India-AI-Exposure-Dashboard.git
+git clone https://github.com/zavil-huda/India-AI-Exposure-Dashboard-v2.git
 ```
 
-Open the project directory and launch:
+Open the project folder:
+
+```bash
+cd India-AI-Exposure-Dashboard-v2
+```
+
+Launch:
 
 ```text
 index.html
 ```
 
-Alternatively, you can run the project using any local development server such as Live Server in Visual Studio Code.
+Or simply use **Live Server** in Visual Studio Code.
 
 ---
 
-## Future Improvements
+# 🗺 Roadmap
 
-- GitHub Pages Deployment
-- Dashboard Search & Filters
-- Additional Occupation Categories
-- Enhanced Mobile Responsiveness
+## ✅ Completed
+
+- Interactive Dashboard
+- Research Methodology
+- Dark Mode
+- Responsive Layout
+- Interactive Plotly Visualizations
+- Production UI
+- Code Cleanup
+
+## 🔜 Future Enhancements
+
+- Live Deployment
+- Advanced Filters
+- Occupation Search
+- Additional Datasets
 - Export & Sharing Options
-- Improved Accessibility
+- Accessibility Improvements
 - Performance Optimizations
-- Version 1.0 Release
 
 ---
 
-## Author
+## 👨‍💻 Author
 
-**Zavil Huda Quraishi**
+**Designed & Developed by**
 
-UI/UX Designer • Product Designer • AI Enthusiast
+# Zavil Huda Quraishi
 
-GitHub: https://github.com/zavil-huda
+**UI/UX Designer • Digital Experience Designer • AI Enthusiast**
+
+Passionate about crafting intuitive digital experiences, designing research-driven products, and exploring the intersection of Artificial Intelligence, workforce analytics, and data visualization.
+
+- 🌐 GitHub: https://github.com/zavil-huda
+- 🔗 LinkedIn: https://www.linkedin.com/in/zavil-huda-quraishi
+
 
 ---
 
-## License
+# 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
-See the LICENSE file for more information.
+See the **LICENSE** file for more information.
