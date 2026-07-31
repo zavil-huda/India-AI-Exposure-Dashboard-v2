@@ -102,6 +102,11 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      transition:
+
+background-color .25s ease,
+
+color .25s ease;
     }
     
     a { 
@@ -131,6 +136,7 @@
       max-width: 1320px; 
       margin: 0 auto; 
       padding: var(--space-6); 
+      padding-bottom:4rem;
     }
 
     .sr-only {
@@ -188,12 +194,23 @@
       color: #ffffff; 
       box-shadow: var(--shadow-md); 
       flex-shrink: 0;
+      transition:
+       transform .25s ease,
+       box-shadow .25s ease;
     }
     
+    .logo:hover{
+
+    transform:rotate(-6deg) scale(1.04);
+
+    box-shadow:0 14px 32px rgba(15,23,42,.12);
+}
+
     .site-title { 
       font-size: clamp(1.8rem, 4vw, 3rem); 
       margin: 0;
       letter-spacing: -0.02em;
+      font-weight:800;
     }
     
     .site-description { 
@@ -216,91 +233,225 @@
       font-size: var(--text-sm);
       cursor: pointer; 
       transition: background-color 0.15s, border-color 0.15s;
+      box-shadow:0 2px 8px rgba(15,23,42,.04);
     }
     
-    .btn:hover {
-      background: var(--color-surface-offset);
-    }
+    .btn:hover{
+
+    background:var(--color-surface-offset);
+
+    border-color:var(--color-primary);
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 22px rgba(15,23,42,.08);
+}
     
-    .btn:focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 2px;
+    .btn:focus-visible{
+
+    outline:none;
+
+    border-color:var(--color-primary);
+
+    box-shadow:0 0 0 4px rgba(1,89,94,.12);
+}
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(0, 105, 111, 0.10);
+      color: var(--color-primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+      transition:
+       transform .2s ease,
+       background .2s ease;
     }
 
-    .badge { 
-      display: inline-flex; 
-      align-items: center;
-      padding: 0.25rem 0.75rem; 
-      border-radius: 999px; 
-      background: rgba(1, 89, 94, 0.12); 
-      color: var(--color-primary); 
-      font-size: var(--text-xs); 
-      font-weight: 700; 
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-    }
+    .badge:hover{
+
+    transform:translateY(-2px);
+}
     
     [data-theme="dark"] .badge {
       background: rgba(94, 181, 194, 0.2);
     }
 
-    .panel { 
-      background: var(--color-surface); 
-      border: 1px solid var(--color-border); 
-      border-radius: var(--radius-xl); 
-      box-shadow: var(--shadow-sm); 
-      overflow: hidden;
-      contain: content;
-    }
+    .panel{
+
+    background:var(--color-surface);
+
+    border:1px solid var(--color-border);
+
+    border-radius:24px;
+
+    box-shadow:0 4px 16px rgba(15,23,42,.04);
+
+    overflow:hidden;
+
+    contain:content;
+    will-change:transform;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.panel:hover{
+
+    border-color:rgba(1,89,94,.22);
+
+    box-shadow:0 14px 40px rgba(15,23,42,.06);
+}
+
+[data-theme="dark"] .panel:hover{
+
+    box-shadow:0 18px 42px rgba(0,0,0,.34);
+}
 
     .hero { 
       display: grid; 
       grid-template-columns: 1fr; 
-      gap: var(--space-6); 
-      margin-bottom: var(--space-6); 
+      gap: var(--space-5); 
+      margin-bottom:3rem;
+      align-items:start;
     }
     
     @media (min-width: 992px) {
       .hero { grid-template-columns: 1.5fr 0.9fr; }
     }
 
-    .hero-main { 
-      padding: var(--space-6) var(--space-8); 
-    }
+  .hero-main{
+
+    padding:2.4rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+  }
     
     @media (max-width: 768px) {
+      .site-title{
+
+    font-size:2rem;
+}
+
+.section-header h2{
+
+    font-size:1.7rem;
+}
+
+.chart-intro h3{
+
+    font-size:1.45rem;
+}
+      .section-card{
+
+    padding:1.5rem;
+}
+
+.section-header{
+
+    padding:1.5rem 1.5rem 0;
+
+    margin-bottom:1.75rem;
+}
+
+.chart-intro{
+
+    margin-bottom:1.75rem;
+}
+
+.chart-insight{
+
+    padding:1.25rem;
+
+    margin-top:1.5rem;
+}
+      .kpi-card{
+
+    min-height:auto;
+
+    padding:1.6rem;
+
+}
+
+.kpi-value{
+
+    font-size:2.4rem;
+    text-rendering:optimizeLegibility;
+
+}
       .hero-main { padding: var(--space-4); }
     }
     
-    .hero-sidebar { 
-      padding: var(--space-6); 
-      display: flex; 
-      flex-direction: column;
-      gap: var(--space-4); 
-    }
+  .hero-sidebar{
 
-    .callout { 
-      padding: var(--space-4); 
-      border-radius: var(--radius-lg); 
-      background: var(--color-surface-offset); 
-      border: 1px solid var(--color-border);
-      font-size: var(--text-sm);
-      line-height:1.7;
-    }
+    padding:2rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1rem;
+
+    justify-content:flex-start;
+  }
+
+  .callout{
+
+    padding:1.15rem 1.3rem;
+
+    border-radius:18px;
+
+    background:var(--color-surface-offset);
+
+    border:1px solid var(--color-border);
+
+    font-size:.94rem;
+
+    line-height:1.75;
+
+    transition:
+        transform .22s ease,
+        border-color .22s ease,
+        box-shadow .22s ease;
+  }
     
     .callout strong {
       display: block;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.45rem;
       color: var(--color-text);
       font-size: var(--text-base);
     }
 
+    .callout:hover{
+
+    transform:translateY(-4px);
+
+    border-color:var(--color-primary);
+
+    box-shadow:0 14px 34px rgba(15,23,42,.06);
+}
+
+[data-theme="dark"] .callout:hover{
+
+    box-shadow:0 16px 36px rgba(0,0,0,.32);
+}
+
     .controls { 
       display: flex; 
+
       gap: var(--space-3); 
       flex-wrap: wrap; 
-      margin: var(--space-4) 0; 
+      margin:1.8rem 0 2rem; 
     }
     
     .control-group {
@@ -322,41 +473,82 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 5l3 3 3-3'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 1rem center;
+      transition:
+       border-color .2s ease,
+       background .2s ease,
+       box-shadow .2s ease;
     }
     
-    .control-select:focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 1px;
-    }
+    .control-select:focus-visible{
 
-    .chart-container { 
-      width: 100%; 
-      height: 620px; 
-      position: relative;
-      contain: strict;
-    }
-    
-    .chart-container.sm { 
-      height: 340px; 
-    }
-    
-    @media (max-width: 991px) {
-      .chart-container { height: 500px; }
-      .chart-container.sm { height: 400px; }
-    }
+    outline:none;
 
-    .kpi-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-      gap: var(--space-4); 
-      margin-bottom: var(--space-6); 
-    }
-    .kpi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-4);
-    margin-bottom: var(--space-6);
+    border-color:var(--color-primary);
+
+    box-shadow:0 0 0 4px rgba(1,89,94,.12);
 }
+
+    .chart-container{
+
+    width:100%;
+
+    height:540px;
+
+    position:relative;
+
+    contain:strict;
+
+    padding:.8rem;
+
+    background:var(--color-surface-2);
+
+    border:1px solid var(--color-border);
+
+    border-radius:20px;
+
+    overflow:hidden;
+    display:flex;
+    align-items:stretch;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+    
+    .chart-container:hover{
+
+    border-color:var(--color-primary);
+
+    box-shadow:0 18px 46px rgba(15,23,42,.08);
+}
+
+[data-theme="dark"] .chart-container:hover{
+
+    box-shadow:0 14px 36px rgba(0,0,0,.35);
+}
+
+    @media (max-width:991px){
+
+    .chart-container{
+
+        height:440px;
+    }
+
+}
+
+    .kpi-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:1.75rem;
+
+    margin-top:3rem;
+
+    margin-bottom:2.75rem;
+  }
 
 /* Paste this here */
 
@@ -364,11 +556,22 @@
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:1.5rem;
+
     margin-top:2rem;
+
+    padding-left:1.5rem;
+    padding-right:1.5rem;
+    padding-bottom:1.5rem;
 }
 
 .insight-grid .callout{
     height:100%;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.insight-grid .callout:hover{
+    box-shadow: var(--shadow-sm);
+    border-color: var(--color-primary);
 }
 
 .insight-grid h3{
@@ -383,115 +586,374 @@
 }
 
 .section-description{
-    max-width:72ch;
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-5);
+    max-width:70ch;
     color: var(--color-text-muted);
+    font-size:1rem;
+    line-height:1.9;
 }
 
 .section-header{
-    padding: var(--space-6) var(--space-6) 0;
-}
-
-.section-header h2{
-    margin-bottom:.75rem;
+    padding:2.4rem 2.4rem 0;
+    margin-bottom:2.3rem;
 }
 
 .section-header .badge{
-    margin-bottom:.35rem;
+    margin-bottom:.9rem;
+}
+
+.section-header h2{
+    margin:0;
+    font-size:clamp(1.75rem,2vw,2.35rem);
+    line-height:1.18;
+    letter-spacing:-0.03em;
+    max-width:900px;
+}
+
+.section-header .section-description{
+    margin-top:1rem;
+    max-width:760px;
+    font-size:1rem;
+    line-height:1.85;
 }
 
 .chart-intro{
-    margin:0 0 var(--space-4);
-    max-width:72ch;
+    margin:0 0 2.4rem;
+    max-width:720px;
+}
+
+.chart-intro .badge{
+    margin-bottom:.8rem;
 }
 
 .chart-intro h3{
-    margin:.75rem 0;
+    margin:0;
+    font-size:clamp(1.55rem,2vw,2rem);
+    line-height:1.2;
+    letter-spacing:-0.02em;
+    color:var(--color-text);
 }
 
 .chart-intro p{
+    margin-top:1rem;
+    font-size:1rem;
+    line-height:1.85;
     color:var(--color-text-muted);
-    line-height:1.7;
+    max-width:68ch;
 }
 
 .chart-insight{
-    margin-top:var(--space-4);
-    padding:1rem 1.25rem;
-    border-left:4px solid var(--color-primary);
+
+    margin-top:0;
+
+    padding:.95rem 1.15rem;
+
+    border:1px solid var(--color-border);
+
+    border-left:3px solid var(--color-primary);
+
+    border-radius:16px;
+
     background:var(--color-surface-offset);
-    border-radius:var(--radius-md);
+
+    transition:
+        border-color .25s ease,
+        background .25s ease;
+}
+
+.chart-insight strong{
+
+    display:block;
+
+    margin-bottom:.45rem;
+
+    font-size:1.05rem;
+
+    font-weight:700;
+
+    letter-spacing:-.01em;
+
+    color:var(--color-text);
 }
 
 .interpretation-note{
-    margin:2rem 1.5rem 1.5rem;
-    padding:1.4rem 1.5rem;
+    margin:2.5rem 1.5rem 3rem;
+    padding:1.6rem 1.7rem;
 }
 
 .chart-insight p{
-    margin:.5rem 0 0;
+
+    margin:0;
+
     color:var(--color-text-muted);
-    line-height:1.7;
+
+    line-height:1.65;
+
+    font-size:.98rem;
+
 }
-    .kpi-card { 
-      padding: var(--space-4) var(--space-6); 
+
+    .kpi-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-height: 285px;
+      padding: 2rem;
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      background: var(--color-surface);
+      overflow: hidden;
       content-visibility: auto;
       contain-intrinsic-size: 150px;
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
     }
-    
-    .kpi-label { 
-      color: var(--color-text-muted); 
-      font-size: var(--text-sm); 
-      font-weight: 500;
+
+    .kpi-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--color-primary);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, .08);
     }
-    
-    .kpi-value { 
-      font-size: clamp(1.8rem, 3vw, 2.4rem); 
-      font-weight: 800; 
-      margin: 0.25rem 0; 
+
+    .kpi-label {
       color: var(--color-text);
+      font-size: 1.08rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.45;
+      margin: 1rem 0 .9rem;
+      transition: color .25s ease;
+    }
+
+    .kpi-value {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--color-primary);
+      margin: .2rem 0 .9rem;
       font-variant-numeric: tabular-nums;
-    }
-    
-    .kpi-note { 
-      color: var(--color-text-faint); 
-      font-size: var(--text-xs); 
+      transition: color .25s ease;
     }
 
-.kpi-context{
-    margin-top:.85rem;
-    font-size:.84rem;
-    color:var(--color-text-faint);
-    line-height:1.6;
-}
-
-.kpi-card{
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-}
-
-.kpi-value{
-    margin-bottom:.65rem;
-}
-
-.kpi-label{
-    margin-bottom:.6rem;
-}
-
-    .content-grid { 
-      display: grid; 
-      grid-template-columns: 1fr; 
-      gap: var(--space-6); 
+    .kpi-note {
+      font-size: .97rem;
+      line-height: 1.75;
+      color: var(--color-text-muted);
+      transition: color .25s ease;
     }
-    
+
+    .kpi-context {
+      margin-top: var(--space-3);
+      font-size: .85rem;
+      line-height: 1.6;
+      color: var(--color-text-faint);
+      opacity: 1;
+      transition: color .25s ease;
+    }
+
+    .kpi-divider {
+      width: 52px;
+      height: 4px;
+      border-radius: 999px;
+      background: var(--color-primary);
+      opacity: .9;
+      margin-bottom: .35rem;
+    }
+
+    .kpi-separator {
+      width: 100%;
+      height: 1px;
+      background: var(--color-border);
+      opacity: .8;
+      margin: 1.15rem 0;
+    }
+
+    /* ==========================================================
+       RQ2 / RQ3 / RQ4 — dedicated analytics-panel components
+    ========================================================== */
+
+    .rq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .rq-col-main {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      min-width: 0;
+    }
+
+    .rq-col-side {
+      display: flex;
+      min-width: 0;
+    }
+
+    .rq-chart-card,
+    .rq-side-card {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      padding: 2.25rem;
+    }
+
+    .rq-card-header {
+      margin-bottom: 1.75rem;
+    }
+
+    .rq-card-header .badge {
+      margin-bottom: .75rem;
+    }
+
+    .rq-title {
+      margin: 0;
+      font-size: clamp(1.5rem, 1.9vw, 2.1rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+      color: var(--color-text);
+      max-width: 640px;
+    }
+
+    .rq-description {
+      margin: .9rem 0 0;
+      max-width: 62ch;
+      color: var(--color-text-muted);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .rq-chart-frame {
+      width: 100%;
+      flex: 1 1 auto;
+      min-height: 380px;
+      position: relative;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      overflow: hidden;
+      padding: .8rem;
+      transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .rq-chart-frame:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 18px 46px rgba(15, 23, 42, .08);
+    }
+
+    [data-theme="dark"] .rq-chart-frame:hover {
+      box-shadow: 0 14px 36px rgba(0, 0, 0, .35);
+    }
+
+    .rq-table-frame {
+      flex: 1 1 auto;
+      min-height: 0;
+      max-height: 30rem;
+      overflow: auto;
+      border: 1px solid var(--color-border);
+      border-radius: 18px;
+      background: var(--color-surface-2);
+      transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .rq-table-frame:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, .05);
+    }
+
+    [data-theme="dark"] .rq-table-frame:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .30);
+    }
+
+    .rq-insight {
+      flex: none;
+      margin-top: 1.25rem;
+      padding: .9rem 1.15rem;
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-primary);
+      border-radius: 16px;
+      background: var(--color-surface-offset);
+      transition:
+        border-color .25s ease,
+        background .25s ease;
+    }
+
+    .rq-insight strong {
+      display: block;
+      margin-bottom: .4rem;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      color: var(--color-text);
+    }
+
+    .rq-insight p {
+      margin: 0;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      font-size: .93rem;
+    }
+
     @media (min-width: 992px) {
-      .content-grid { grid-template-columns: 1.45fr 0.85fr; }
+      .rq-grid {
+        grid-template-columns: 1.6fr 0.95fr;
+        align-items: stretch;
+        gap: 2rem;
+      }
+
+      .rq-table-frame {
+        max-height: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .rq-chart-card,
+      .rq-side-card {
+        padding: 1.5rem;
+      }
+
+      .rq-card-header {
+        margin-bottom: 1.5rem;
+      }
     }
 
     .section-card { 
-      padding: var(--space-6); 
-      margin-bottom: var(--space-6); 
+      transition:
+       border-color .25s ease,
+       box-shadow .25s ease,
+       transform .25s ease;
+      padding:2.25rem; 
+      margin-bottom:2.5rem; 
       content-visibility: auto;
       contain-intrinsic-size: 450px;
+    }
+
+    .section-card:hover{
+
+    border-color:var(--color-primary);
+
+    box-shadow:0 20px 48px rgba(15,23,42,.08);
+}
+
+[data-theme="dark"] .section-card:hover{
+
+    box-shadow:0 20px 44px rgba(0,0,0,.32);
+}
+
+    .section-card-full {
+      width: 100%;
     }
     
     .section-card p { 
@@ -500,48 +962,88 @@
       font-size: var(--text-sm);
     }
 
-    .data-table-wrapper {
-      overflow-x: auto;
-      border-radius: var(--radius-sm);
-    }
-    
     .data-table { 
       width: 100%; 
       border-collapse: collapse; 
       font-size: var(--text-sm); 
       text-align: left;
+      min-width:680px;
     }
     
-    .data-table th, .data-table td { 
-      padding: var(--space-3) var(--space-2); 
-      border-bottom: 1px solid var(--color-divider); 
-      vertical-align: top; 
-    }
+  .data-table th,
+  .data-table td{
+
+    padding:.85rem 1rem;
+
+    border-bottom:1px solid var(--color-divider);
+
+    vertical-align:top;
+}
     
-    .data-table th { 
-      color: var(--color-text-muted); 
-      font-weight: 600; 
-      white-space: nowrap;
+    .data-table th{
+
+    position:sticky;
+
+    top:0;
+
+    background:var(--color-surface);
+
+    color:var(--color-text);
+
+    font-size:.86rem;
+
+    font-weight:700;
+
+    letter-spacing:.02em;
+
+    white-space:nowrap;
+
+    z-index:2;
+
+    box-shadow:0 1px 0 var(--color-divider);
+}
+
+    .data-table tbody tr {
+      transition: background-color 0.15s ease;
     }
 
-    .legend-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
-      gap: var(--space-2); 
-      margin-top: var(--space-4); 
+    .data-table tbody tr:nth-child(even) {
+      background: var(--color-surface-offset);
     }
-    
-    .legend-swatch { 
-      padding: var(--space-3); 
-      border-radius: var(--radius-md); 
-      color: #ffffff; 
-      font-size: var(--text-xs); 
-      font-weight: 700; 
-      text-align: center; 
+
+  .data-table tbody tr:hover{
+
+    background:var(--color-surface-offset);
+
+    transition:background .2s ease;
+  }
+
+    .legend-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: var(--space-2);
+      margin-top: 2rem;
+    }
+
+    .legend-swatch {
+      padding: var(--space-3);
+      border-radius: var(--radius-md);
+      color: #ffffff;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-align: center;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      transition:
+        transform .2s ease,
+        box-shadow .2s ease;
     }
-    
+
+    .legend-swatch:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+
     .legend-swatch[data-color="minimal"] { background-color: #2e7d32; }
     .legend-swatch[data-color="low"] { background-color: #7cb342; color: #1c1a17; }
     .legend-swatch[data-color="moderate"] { background-color: #f9a825; color: #1c1a17; }
@@ -552,96 +1054,51 @@
    RESEARCH SECTION COMPONENTS
 ========================================================== */
 
-.section-header {
-  margin-bottom: var(--space-5);
-}
-
 .section-header h2 {
   margin-top: var(--space-3);
   margin-bottom: var(--space-3);
   font-size: clamp(1.8rem, 2vw, 2.35rem);
   line-height: 1.15;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .section-header p {
   margin: 0;
 }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  background: rgba(0, 105, 111, 0.10);
-  color: var(--color-primary);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.section-description {
-  margin-top: var(--space-3);
-  margin-bottom: var(--space-5);
-  color: var(--color-text-muted);
-  font-size: 1rem;
-  line-height: 1.75;
-  max-width: 65ch;
-}
-
-.chart-insight {
-  margin-top: var(--space-5);
-  padding: var(--space-4);
-  background: rgba(0, 105, 111, 0.04);
-  border-left: 4px solid var(--color-primary);
-  border-radius: var(--radius-md);
-}
-
-.chart-insight strong {
-  display: block;
-  margin-bottom: 0.6rem;
-  font-size: 1rem;
-  color: var(--color-text);
-}
-
-.chart-insight p {
-  margin: 0;
-  color: var(--color-text-muted);
-  line-height: 1.75;
-}
-
-.kpi-context {
-  margin-top: var(--space-3);
-  color: var(--color-text-muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.data-table th {
-  font-weight: 700;
-}
-
 .data-table td {
   line-height: 1.65;
-  vertical-align: top;
 }
 
     .source-list{
     list-style:none;
     margin:var(--space-5) 0 0;
     padding:0;
-    display:flex;
-    flex-direction:column;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap:1.5rem;
+    align-items:stretch;
 }
 
 .source-list li{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
     padding:1rem 1.25rem;
     border:1px solid var(--color-border);
+    background:var(--color-surface);
+    color:var(--color-text);
     border-radius:var(--radius-lg);
     background:var(--color-surface-offset);
     line-height:1.7;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    min-height:185px;
+}
+
+.source-list li:hover{
+    box-shadow: var(--shadow-sm);
+    border-color: var(--color-primary);
+    transform:translateY(-4px);
 }
 
 .source-list strong{
@@ -649,6 +1106,7 @@
     margin-bottom:.5rem;
     color:var(--color-text);
     font-size:var(--text-base);
+    font-size:1.02rem;
 }
 
 .source-list a{
@@ -666,7 +1124,8 @@
       font-size: var(--text-sm); 
       padding: var(--space-6) 0; 
       border-top: 1px solid var(--color-divider);
-      margin-top: var(--space-8);
+      margin-top:4rem;
+      line-height:1.9;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -714,15 +1173,15 @@
 
     <span class="badge">Interactive Research Dashboard</span>
 
-    <h2 style="margin-top:var(--space-3);margin-bottom:var(--space-3);font-size:clamp(2rem,4vw,3rem);line-height:1.1;">
+    <h2 style="margin-top:1rem;margin-bottom:1rem;font-size:clamp(2.3rem,4vw,3.4rem);line-height:1.08;letter-spacing:-0.04em;max-width:850px;">
       How might Generative AI reshape work across India's occupations?
     </h2>
 
-    <p class="site-description" style="margin-bottom:var(--space-4);max-width:72ch;">
+    <p class="site-description" style="margin-bottom:2rem;max-width:68ch;font-size:1.05rem;line-height:1.9;">
       This dashboard is designed to help researchers, students, policymakers, recruiters, and professionals explore how different occupations may be affected by modern AI systems. Rather than predicting job loss, it highlights where AI is most likely to assist, automate, or transform digital work based on transparent occupational characteristics.
     </p>
 
-    <div class="callout" style="margin-bottom:var(--space-5);">
+    <div class="callout" style="margin-bottom:2rem;">
       <strong>Start here.</strong>
       Each rectangle represents an occupation group. Larger rectangles indicate more workers, while color represents the selected analytical metric. Begin by exploring Digital AI Exposure, then compare how formality, wage level, and remote feasibility influence the workforce.
     </div>
@@ -776,7 +1235,6 @@
 
     </div>
 
-  </div>
 <div class="chart-insight" role="note" aria-labelledby="treemap-insight">
 
   <strong id="treemap-insight">
@@ -791,6 +1249,7 @@
   </p>
 
 </div>
+  </div>
   <aside class="panel hero-sidebar" aria-label="Research Overview">
 
     <article class="callout">
@@ -886,7 +1345,7 @@
     class="callout interpretation-note"
     role="note"
     aria-label="Interpretation guidance"
-    style="margin-top:var(--space-5);">
+    style="margin-top:1.75rem;">
 
     <strong>How to interpret these findings</strong>
 
@@ -901,19 +1360,27 @@
   </div>
 
 </section>
-      <section class="kpi-grid" aria-label="Key Performance Indicators">
+      <div class="kpi-section"></div>
+<section class="kpi-grid" aria-label="Key Performance Indicators">
 
   <article class="panel kpi-card">
 
-    <div class="kpi-value" id="kpiWorkersTotal" aria-live="polite">-</div>
+
+    <div class="kpi-value" id="kpiWorkersTotal" aria-live="polite">
+      -
+    </div>
+
+    <div class="kpi-divider"></div>
 
     <h2 class="kpi-label">
       Workers Represented
     </h2>
 
-    <div class="kpi-note">
+    <p class="kpi-note">
       Estimated workforce included in this research dataset.
-    </div>
+    </p>
+
+    <div class="kpi-separator"></div>
 
     <p class="kpi-context">
       Represents the occupational coverage used throughout the dashboard.
@@ -921,17 +1388,24 @@
 
   </article>
 
+
   <article class="panel kpi-card">
 
-    <div class="kpi-value" id="kpiAvgAI" aria-live="polite">-</div>
+    <div class="kpi-value" id="kpiAvgAI" aria-live="polite">
+      -
+    </div>
+
+    <div class="kpi-divider"></div>
 
     <h2 class="kpi-label">
       Employment-weighted AI Exposure
     </h2>
 
-    <div class="kpi-note">
+    <p class="kpi-note">
       Average AI exposure across represented workers.
-    </div>
+    </p>
+
+    <div class="kpi-separator"></div>
 
     <p class="kpi-context">
       Higher values indicate greater interaction with Generative AI tasks.
@@ -939,17 +1413,24 @@
 
   </article>
 
+
   <article class="panel kpi-card">
 
-    <div class="kpi-value" id="kpiHighShare" aria-live="polite">-</div>
+    <div class="kpi-value" id="kpiHighShare" aria-live="polite">
+      -
+    </div>
+
+    <div class="kpi-divider"></div>
 
     <h2 class="kpi-label">
       High-exposure Workers
     </h2>
 
-    <div class="kpi-note">
+    <p class="kpi-note">
       Workers in occupations with AI exposure scores of 7 or above.
-    </div>
+    </p>
+
+    <div class="kpi-separator"></div>
 
     <p class="kpi-context">
       Indicates where AI-assisted transformation may be more substantial.
@@ -957,19 +1438,24 @@
 
   </article>
 
+
   <article class="panel kpi-card">
 
     <div class="kpi-value">
       14.67M
     </div>
 
+    <div class="kpi-divider"></div>
+
     <h2 class="kpi-label">
       Digital Economy Workers
     </h2>
 
-    <div class="kpi-note">
+    <p class="kpi-note">
       Official estimate for 2022–23.
-    </div>
+    </p>
+
+    <div class="kpi-separator"></div>
 
     <p class="kpi-context">
       Serves as contextual reference for India's digitally intensive workforce.
@@ -979,127 +1465,54 @@
 
 </section>
 
-      <div class="content-grid">
-        <div class="content-column">
-          <section class="panel section-card" aria-labelledby="heading-top-exposed">
-            <div class="section-header">
+      <div class="rq-grid">
+        <div class="rq-col-main">
+          <article class="panel rq-chart-card" aria-labelledby="heading-top-exposed">
+            <header class="rq-card-header">
+              <span class="badge">Research Question 2</span>
+              <h2 id="heading-top-exposed" class="rq-title">Which occupations combine the highest AI exposure with meaningful workforce scale?</h2>
+              <p class="rq-description">The treemap introduced the overall workforce landscape. This comparison ranks occupations by Digital AI Exposure, allowing the highest-exposure occupations to be compared while also considering workforce size.</p>
+            </header>
 
-    <span class="badge">
-        Research Question 2
-    </span>
+            <div id="barTop"
+                 class="rq-chart-frame"
+                 role="figure"
+                 aria-label="Bar chart showing the top AI-exposed occupation groups"></div>
 
-    <h2 id="heading-top-exposed"
-        style="margin-top:var(--space-3);">
+            <aside class="rq-insight" role="note" aria-labelledby="bar-insight">
+              <strong id="bar-insight">How to interpret this comparison</strong>
+              <p>Higher positions indicate occupations with stronger estimated interaction with Generative AI tasks. Compare both the exposure score and workforce values because a smaller highly exposed occupation and a larger moderately exposed occupation imply different workforce impacts.</p>
+            </aside>
+          </article>
 
-        Which occupations combine the highest AI exposure with meaningful workforce scale?
+          <article class="panel rq-chart-card" aria-labelledby="heading-exposure-scale">
+            <header class="rq-card-header">
+              <span class="badge">Research Question 3</span>
+              <h2 id="heading-exposure-scale" class="rq-title">Which occupations combine high AI exposure with a large workforce?</h2>
+              <p class="rq-description">AI exposure alone does not determine workforce impact. This chart compares exposure scores with workforce size to identify occupations where AI could influence the greatest number of workers across India's labour market.</p>
+            </header>
 
-    </h2>
+            <div id="scatter"
+                 class="rq-chart-frame"
+                 role="figure"
+                 aria-label="Scatter plot showing correlation between AI exposure and number of workers"></div>
 
-    <p class="section-description">
-
-        The treemap introduced the overall workforce landscape.
-        This comparison ranks occupations by Digital AI Exposure,
-        allowing the highest-exposure occupations to be compared
-        while also considering workforce size.
-
-    </p>
-
-</div>
-            <div id="barTop" class="chart-container sm" role="figure" aria-label="Bar chart showing the top AI-exposed occupation groups"></div>
-            <div class="chart-insight"
-     role="note"
-     aria-labelledby="bar-insight">
-
-    <strong id="bar-insight">
-        How to interpret this comparison
-    </strong>
-
-    <p>
-        Higher positions indicate occupations with stronger estimated
-        interaction with Generative AI tasks. Compare both the exposure
-        score and workforce values because a smaller highly exposed
-        occupation and a larger moderately exposed occupation imply
-        different workforce impacts.
-    </p>
-    </div>
-
-          </section>
-          
-          <section class="panel section-card"
-         aria-labelledby="heading-exposure-scale">
-
-          <div class="section-header">
-
-    <span class="badge">
-        Research Question 3
-    </span>
-
-    <h2 id="heading-exposure-scale"
-        style="margin-top:var(--space-3);">
-
-        Which occupations combine high AI exposure with a large workforce?
-
-    </h2>
-
-    <p class="section-description">
-
-        AI exposure alone does not determine workforce impact. This chart
-        compares exposure scores with workforce size to identify occupations
-        where AI could influence the greatest number of workers across India's
-        labour market.
-
-    </p>
-
-</div>
-            <div id="scatter" class="chart-container sm" role="figure" aria-label="Scatter plot showing correlation between AI exposure and number of workers"></div>
-          
-            <div class="chart-insight"
-     role="note"
-     aria-labelledby="scatter-insight">
-
-    <strong id="scatter-insight">
-        How to interpret this relationship
-    </strong>
-
-    <p>
-        Occupations appearing in the upper-right region combine both high AI
-        exposure and large workforce participation, suggesting where AI-enabled
-        transformation could influence the greatest number of workers. Smaller
-        but highly exposed occupations may represent specialised digital roles
-        undergoing rapid change.
-    </p>
-
-</div>
-
-          </section>
+            <aside class="rq-insight" role="note" aria-labelledby="scatter-insight">
+              <strong id="scatter-insight">How to interpret this relationship</strong>
+              <p>Occupations appearing in the upper-right region combine both high AI exposure and large workforce participation, suggesting where AI-enabled transformation could influence the greatest number of workers. Smaller but highly exposed occupations may represent specialised digital roles undergoing rapid change.</p>
+            </aside>
+          </article>
         </div>
-        
-        <div class="content-column">
-          <section class="panel section-card" aria-labelledby="heading-details">
-            <div class="section-header">
 
-    <span class="badge">
-        Research Question 4
-    </span>
+        <div class="rq-col-side">
+          <article class="panel rq-side-card" aria-labelledby="heading-details">
+            <header class="rq-card-header">
+              <span class="badge">Research Question 4</span>
+              <h2 id="heading-details" class="rq-title">Which occupations contribute most to India's AI-exposed workforce?</h2>
+              <p class="rq-description">The table provides occupation-level evidence supporting the visualizations shown throughout the dashboard. Compare workforce size, estimated AI exposure, and the primary task characteristics to understand why some occupations appear more exposed than others.</p>
+            </header>
 
-    <h2 id="heading-details"
-        style="margin-top:var(--space-3);">
-
-        Which occupations contribute most to India's AI-exposed workforce?
-
-    </h2>
-
-    <p class="section-description">
-
-        The table provides occupation-level evidence supporting the visualizations
-        shown throughout the dashboard. Compare workforce size, estimated AI
-        exposure, and the primary task characteristics to understand why some
-        occupations appear more exposed than others.
-
-    </p>
-
-</div>
-            <div class="data-table-wrapper">
+            <div class="rq-table-frame">
               <table class="data-table" aria-label="Detailed breakdown of occupations and their AI exposure">
                 <thead>
                   <tr>
@@ -1113,27 +1526,15 @@
               </table>
             </div>
 
-            <div class="chart-insight"
-     role="note"
-     aria-labelledby="table-insight">
+            <aside class="rq-insight" role="note" aria-labelledby="table-insight">
+              <strong id="table-insight">How to interpret this evidence</strong>
+              <p>Consider workforce size, AI exposure, and task characteristics together rather than focusing on a single column. Occupations with similar AI scores may face very different levels of workforce impact depending on how many people are employed and which tasks AI can realistically augment.</p>
+            </aside>
+          </article>
+        </div>
+      </div>
 
-    <strong id="table-insight">
-        How to interpret this evidence
-    </strong>
-
-    <p>
-        Consider workforce size, AI exposure, and task characteristics together
-        rather than focusing on a single column. Occupations with similar AI
-        scores may face very different levels of workforce impact depending on
-        how many people are employed and which tasks AI can realistically
-        augment.
-    </p>
-
-</div>
-
-          </section>
-          
-          <section class="panel section-card" aria-labelledby="heading-sources">
+      <section class="panel section-card section-card-full" aria-labelledby="heading-sources">
             <div class="section-header">
 
     <span class="badge">
@@ -1252,9 +1653,7 @@
     </li>
 
 </ul>
-          </section>
-        </div>
-      </div>
+      </section>
 
       <section class="panel section-card" aria-labelledby="heading-legend">
         <div class="section-header">
