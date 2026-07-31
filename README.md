@@ -23,7 +23,7 @@ A modern, research-driven dashboard that visualizes how Generative AI may influe
 
 ### 🚀 Explore the Dashboard
 
-**https://india-ai-exposure-dashboard-v2.vercel.app**
+👉 **[Open India AI Exposure Dashboard](https://india-ai-exposure-dashboard-v2.vercel.app)**
 
 ---
 
@@ -248,8 +248,9 @@ Passionate about crafting intuitive digital experiences, building research-drive
 
 ### Connect with me
 
-- **GitHub:** https://github.com/zavil-huda
-- **LinkedIn:** https://www.linkedin.com/in/zavil-huda-quraishi
+- **GitHub:** [zavil-huda](https://github.com/zavil-huda)
+
+- **LinkedIn:** [Zavil Huda Quraishi](https://www.linkedin.com/in/zavil-huda-quraishi)
 
 ---
 
